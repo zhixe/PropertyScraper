@@ -5,6 +5,11 @@
 3. Load: staging_pgsql_iproperty.py 
 4. OLAP Transformation: pgsql_olap_iproperty.py
   
+Run the following command in the terminal to create a python virtual env and install python libraries from the requirements text file:
+python -m venv prj_venv
+source prj_venv/Scripts/activate
+python -m pip install -r requirements.txt
+
 ### Things-to-do:
 - Add logic to switch into linux/win/mac script version
 - Improvise logging for each script
@@ -47,8 +52,8 @@ WEBURL14='https://www.iproperty.com.my/sale/terengganu/all-residential'
 WEBURL15='https://www.iproperty.com.my/sale/perlis/all-residential'
 WEBURL16='https://www.iproperty.com.my/sale/labuan/all-residential'
 MAIN_DIR="your project full path"
-CHROME_DRIVER_WIN="chromedriver.exe"
-CHROME_DRIVER_LINUX="chromedriver-headless-linux64-120-0-6099-109"
+CHROME_DRIVER="your chromedriver filename, must include .exe" # if you update your chrome browser to latest version, then need to change to a new driver version.
+CHROME_DRIVER_LINUX="chromedriver-headless-linux64-120-0-6099-109" # DON'T USE IT YET
 CONFIG_DIR="config"
 LOG_DIR="logs"
 RAW_DIR="your project full path then concat with \data\\raw"
@@ -63,3 +68,4 @@ EXTRACT="your project full path then concat with \src\01_extract"
 TRANSFORM="your project full path then concat with \src\02_transform"
 LOAD="your project full path then concat with \src\03_load"
 OLAP="your project full path then concat with \src\04_olap"
+

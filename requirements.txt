@@ -1,29 +1,15 @@
 psycopg2-binary
 pandas
 pyodbc
-requests
 selenium
-openpyxl
 python-dotenv
 tqdm
 selenium-stealth
-plotly
-Flask
-google-auth-oauthlib
-dash 
-dash-renderer 
-dash-html-components 
-dash-core-components
-celery
-dash-bootstrap-components
-PyJWT
-Flask-Caching
-flask_cors
 SQLAlchemy
-waitress
-gunicorn
 schedule
+celery
 redis
+
 
 # ### RESERVED
 # flask-oauthlib
@@ -35,3 +21,14 @@ redis
 # streamlit
 # apache-airflow
 # SQLAlchemy
+# openpyxl
+# python-dotenv
+# tqdm
+# selenium-stealth
+# celery
+# PyJWT
+# Flask-Caching
+# flask_cors
+# SQLAlchemy
+# waitress
+# gunicorn
