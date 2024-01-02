@@ -9,9 +9,8 @@
 - Move into docker container
 - Build and deploy in docker
 - Fix the callback functions for no.5
-
-
-
+  
+  
 ## Property Data Analysis: Dashboard Application
 ### Deploy (Linux server) using command: gunicorn --worker-tmp-dir /dev/shm dashboard:server
 5. Flask/Dash Web Server: dashboard.py
