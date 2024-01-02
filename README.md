@@ -23,3 +23,43 @@
 - Build and deploy with docker
 - Add navigation bar on the left side screen
 - Add navigation bar logic to minimize into hamburger menu when in mobile state
+  
+## .env file schema:
+pgsqlHost="your host"
+pgsqlPort=pgsql port number
+pgsqlUsername="your username"
+pgsqlPassword="your password"
+pgsqlDatabase="your databasename"
+WEBURL1='https://www.iproperty.com.my/sale/kuala-lumpur/all-residential'
+WEBURL2='https://www.iproperty.com.my/sale/selangor/all-residential'
+WEBURL3='https://www.iproperty.com.my/sale/johor/all-residential'
+WEBURL4='https://www.iproperty.com.my/sale/penang/all-residential'
+WEBURL5='https://www.iproperty.com.my/sale/perak/all-residential'
+WEBURL6='https://www.iproperty.com.my/sale/negeri-sembilan/all-residential'
+WEBURL7='https://www.iproperty.com.my/sale/melaka/all-residential'
+WEBURL8='https://www.iproperty.com.my/sale/pahang/all-residential'
+WEBURL9='https://www.iproperty.com.my/sale/sabah/all-residential'
+WEBURL10='https://www.iproperty.com.my/sale/sarawak/all-residential'
+WEBURL11='https://www.iproperty.com.my/sale/kedah/all-residential'
+WEBURL12='https://www.iproperty.com.my/sale/putrajaya/all-residential'
+WEBURL13='https://www.iproperty.com.my/sale/kelantan/all-residential'
+WEBURL14='https://www.iproperty.com.my/sale/terengganu/all-residential'
+WEBURL15='https://www.iproperty.com.my/sale/perlis/all-residential'
+WEBURL16='https://www.iproperty.com.my/sale/labuan/all-residential'
+MAIN_DIR="your project full path"
+CHROME_DRIVER_WIN="chromedriver.exe"
+CHROME_DRIVER_LINUX="chromedriver-headless-linux64-120-0-6099-109"
+CONFIG_DIR="config"
+LOG_DIR="logs"
+RAW_DIR="your project full path then concat with \data\\raw"
+STAGING_DIR="your project full path then concat with \data\\staging"
+SCHEMA_DIR="schema"
+DATABASE_DIR="src\database"
+PY_ENV="prj_venv\Scripts\python"
+KEY_SCHEMA_RAW="raw_iproperty"
+KEY_SCHEMA_STAGING="staging_iproperty"
+KEY_SCHEMA_OLAP="olap_iproperty"
+EXTRACT="your project full path then concat with \src\01_extract"
+TRANSFORM="your project full path then concat with \src\02_transform"
+LOAD="your project full path then concat with \src\03_load"
+OLAP="your project full path then concat with \src\04_olap"
