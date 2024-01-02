@@ -1,0 +1,56 @@
+{
+    "raw_iproperty": 
+    {
+        "[page_link]": "TEXT",
+        "[source]": "TEXT",
+        "[agent_name]": "TEXT",
+        "[posted_date]": "TEXT",
+        "[house_price]": "TEXT",
+        "[price_square_feet]": "TEXT",
+        "[house_name]": "TEXT",
+        "[house_location]": "TEXT",
+        "[house_type]": "TEXT",
+        "[lot_type]": "TEXT",
+        "[square_footage]": "TEXT",
+        "[house_furniture]": "TEXT",
+        "[created_at]": "DATETIME"
+    },
+    "staging_iproperty": 
+    {
+        "[property_id]": "NVARCHAR(50)",
+        "[page_link]": "NVARCHAR(MAX)",
+        "[source]": "NVARCHAR(9)",
+        "[agent_name]": "NVARCHAR(100)",
+        "[state]": "NVARCHAR(100)",
+        "[area]": "NVARCHAR(100)",
+        "[house_price]": "DECIMAL(20,2)",
+        "[price_square_feet]": "DECIMAL(20,2)",
+        "[house_name]": "NVARCHAR(MAX)",
+        "[house_location]": "NVARCHAR(MAX)",
+        "[house_type]": "NVARCHAR(MAX)",
+        "[lot_type]": "NVARCHAR(MAX)",
+        "[square_footage]": "DECIMAL(20,2)",
+        "[house_furniture]": "NVARCHAR(MAX)",
+        "[posted_date]": "DATETIME",
+        "[created_at]": "DATETIME"
+    },
+    "olap_iproperty": 
+    {
+        "[property_id]": "NVARCHAR(50)",
+        "[page_link]": "NVARCHAR(MAX)",
+        "[source]": "NVARCHAR(9)",
+        "[agent_name]": "NVARCHAR(100)",
+        "[state]": "NVARCHAR(100)",
+        "[area]": "NVARCHAR(100)",
+        "[house_price]": "DECIMAL(20,2)",
+        "[price_square_feet]": "DECIMAL(20,2)",
+        "[house_name]": "NVARCHAR(MAX)",
+        "[house_location]": "NVARCHAR(MAX)",
+        "[house_type]": "NVARCHAR(MAX)",
+        "[lot_type]": "NVARCHAR(MAX)",
+        "[square_footage]": "DECIMAL(20,2)",
+        "[house_furniture]": "NVARCHAR(MAX)",
+        "[posted_date]": "DATETIME",
+        "[created_at]": "DATETIME"
+    }
+}

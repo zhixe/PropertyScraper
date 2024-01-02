@@ -1,0 +1,44 @@
+{
+    "raw_iproperty": 
+    {
+        "property_id": "VARCHAR(50)",
+        "page_link": "TEXT",
+        "source": "VARCHAR(9)",
+        "agent_name": "VARCHAR(100)",
+        "state": "VARCHAR(100)",
+        "area": "VARCHAR(100)",
+        "house_price": "DECIMAL(20,2)",
+        "price_square_feet": "DECIMAL(20,2)",
+        "house_name": "TEXT",
+        "house_location": "TEXT",
+        "house_type": "TEXT",
+        "lot_type": "TEXT",
+        "square_footage": "DECIMAL(20,2)",
+        "house_furniture": "TEXT",
+        "posted_date": "TIMESTAMP",
+        "created_at": "TIMESTAMP"
+    },
+    "staging_iproperty": 
+    {
+        "property_id": "VARCHAR(50)",
+        "page_link": "TEXT",
+        "source": "VARCHAR(9)",
+        "agent_name": "VARCHAR(100)",
+        "state": "VARCHAR(100)",
+        "area": "VARCHAR(100)",
+        "house_price": "DECIMAL(20,2)",
+        "price_square_feet": "DECIMAL(20,2)",
+        "house_name": "TEXT",
+        "house_location": "TEXT",
+        "house_type": "TEXT",
+        "lot_type": "TEXT",
+        "square_footage": "DECIMAL(20,2)",
+        "house_furniture": "TEXT",
+        "posted_date": "TIMESTAMP",
+        "created_at": "TIMESTAMP",
+        "valid_from": "TIMESTAMP",
+        "valid_to": "TIMESTAMP",
+        "is_current": "BOOLEAN",
+        "row_hash": "VARCHAR(64)"
+    }
+}

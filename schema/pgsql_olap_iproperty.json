@@ -1,0 +1,34 @@
+{
+    "property.olap.mv_olap_time_series_prices": 
+    {
+        "period": "DATE",
+        "average_house_price": "DECIMAL",
+        "count": "INT"
+    },
+    "property.olap.mv_olap_furniture_status": 
+    {
+        "furniture_status": "VARCHAR(100)"
+    },
+    "property.olap.mv_olap_avg_price_by_state": 
+    {
+        "state": "VARCHAR(100)",
+        "average_price": "DECIMAL",
+        "count": "INT"
+    },
+    "property.olap.mv_olap_price_trends_by_type": 
+    {
+        "state": "VARCHAR(100)",
+        "property_type": "DECIMAL",
+        "count": "INT"
+    },
+    "property.olap.mv_olap_property_type_distribution": 
+    {
+        "property_type": "VARCHAR(100)",
+        "count": "INT"
+    },
+    "property.olap.mv_olap_posting_dates": 
+    {
+        "posting_date": "DATE",
+        "count": "INT"
+    }
+}

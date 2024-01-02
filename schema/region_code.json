@@ -1,0 +1,22 @@
+{
+    "RegionCode": {
+        "01": "johor",
+        "02": "kedah",
+        "03": "kelantan",
+        "04": "melaka",
+        "05": "negeri-sembilan",
+        "06": "pahang",
+        "07": "penang",
+        "08": "perak",
+        "09": "perlis",
+        "10": "selangor",
+        "11": "terengganu",
+        "12": "sabah",
+        "13": "sarawak",
+        "14": "kuala-lumpur",
+        "15": "labuan",
+        "16": "putrajaya"
+    }
+}
+// SAMPLE REGEX
+// https://www.propertyguru.com.my/property-for-sale?listing_type=sale&market=residential&region_code=

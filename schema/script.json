@@ -1,0 +1,20 @@
+{
+    "Script": {
+        "01": "01_kuala-lumpur/main.py",
+        "02": "02_selangor/main.py",
+        "03": "03_johor/main.py",
+        "04": "04_penang/main.py",
+        "05": "05_perak/main.py",
+        "06": "06_negeri-sembilan/main.py",
+        "07": "07_melaka/main.py",
+        "08": "08_pahang/main.py",
+        "09": "09_sabah/main.py",
+        "10": "10_sarawak/main.py",
+        "11": "11_kedah/main.py",
+        "12": "12_putrajaya/main.py",
+        "13": "13_kelantan/main.py",
+        "14": "14_terengganu/main.py",
+        "15": "15_perlis/main.py",
+        "16": "16_labuan/main.py"
+    }
+}

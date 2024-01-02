@@ -1,0 +1,37 @@
+psycopg2-binary
+pandas
+pyodbc
+requests
+selenium
+openpyxl
+python-dotenv
+tqdm
+selenium-stealth
+plotly
+Flask
+google-auth-oauthlib
+dash 
+dash-renderer 
+dash-html-components 
+dash-core-components
+celery
+dash-bootstrap-components
+PyJWT
+Flask-Caching
+flask_cors
+SQLAlchemy
+waitress
+gunicorn
+schedule
+redis
+
+# ### RESERVED
+# flask-oauthlib
+# mysql-connector-python
+# pyautogui
+# xlsxwriter
+# psycopg2
+# pytest
+# streamlit
+# apache-airflow
+# SQLAlchemy

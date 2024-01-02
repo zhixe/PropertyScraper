@@ -1,0 +1,17 @@
+{
+    "iproperty": 
+    {
+        "page_link": "TEXT",
+        "agent_name": "TEXT",
+        "posted_date": "DATE",
+        "house_price": "DOUBLE",
+        "price_square_feet": "DOUBLE",
+        "house_name": "TEXT",
+        "house_location": "TEXT",
+        "house_type": "TEXT",
+        "lot_type": "TEXT",
+        "square_footage": "DOUBLE",
+        "house_furniture": "TEXT",
+        "created_at": "DATETIME"
+    }
+}
