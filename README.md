@@ -17,7 +17,7 @@ python -m pip install -r requirements.txt
 - Add logging to each function and class
 - Migrate python to golang in separate repo
   
-## Property Data Analysis: Dashboard Application
+## Property Data Analysis: Property Dashboard
 ### Deploy (Linux server) using command: gunicorn --worker-tmp-dir /dev/shm dashboard:server
 5. Flask/Dash Web Server: dashboard.py
   
