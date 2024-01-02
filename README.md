@@ -12,7 +12,7 @@
 
 
 
-## Property Data Analysis Dashboard Application
+## Property Data Analysis: Dashboard Application
 ### Deploy (Linux server) using command: gunicorn --worker-tmp-dir /dev/shm dashboard:server
 5. Flask/Dash Web Server: dashboard.py
 
