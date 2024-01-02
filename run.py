@@ -13,17 +13,20 @@ auto_file_transform = os.path.join(auto_dir, '02_transform_auto.py')
 auto_file_load = os.path.join(auto_dir, '03_load_auto.py')
 auto_file_olap = os.path.join(auto_dir, '04_olap_auto.py')
 
-
 def run_script(path):
     runpy.run_path(path)
 
 # List of file paths
-file_paths = [auto_file_extract, auto_file_transform, auto_file_load, runpy.run_path(auto_file_olap)
-]
+file_paths = [auto_file_extract, auto_file_transform, auto_file_load, auto_file_olap]
 
 # Create and start a new thread for each file
+threads = []
 for path in file_paths:
-    thread = threading.Thread(target=run_script, args=(path,))
+    thread_name = os.path.basename(path)  # Get the filename from the path
+    thread = threading.Thread(target=run_script, args=(path,), name=thread_name)
     thread.start()
+    threads.append(thread)
 
-
+# Print the names of all running threads
+for thread in threads:
+    print(f"Thread {thread.name} is running.")
