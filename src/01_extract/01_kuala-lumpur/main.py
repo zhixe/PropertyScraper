@@ -11,11 +11,6 @@ class Main:
     def create_empty_csv_file(self):
         self.config.create_empty_csv_file(Extraction(self.config).extractors.keys())
 
-    # def create_empty_excel_file(self):
-    #     # Convert the headers to a list and then create the Excel file
-    #     headers = list(Extraction(self.config).extractors.keys())
-    #     self.config.create_empty_excel_file(headers)
-
     def initiate_scraper(self):
         self.scraper = Extraction(self.config)
         self.scraper.setup_driver_and_browser()

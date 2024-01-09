@@ -39,13 +39,6 @@ class Config:
         my_region = os.getenv('MY_REGION')
         return os.path.join(self.out_dir, f"batch{batch_number}_{script_number}_{my_region}_iproperty_{timestamp}.csv")
 
-    # @property
-    # def excel_file(self):
-    #     batch_number = self.batch_number
-    #     script_number = os.getenv('SCRIPT_NUMBER_DECIMAL', 'default_script')
-    #     my_region = os.getenv('MY_REGION')
-    #     return os.path.join(self.out_dir, f"batch{batch_number}_{script_number}_{my_region}_iproperty.xlsx")
-
     @property
     def log_dir(self):
         return self.get_env_path("LOG_DIR")
@@ -69,25 +62,9 @@ class Config:
         my_region = os.getenv('MY_REGION')
         return os.path.join(self.out_dir, f"batch{batch_number}_{script_number}_{my_region}_iproperty_{timestamp}.csv")
 
-    # @functools.cached_property
-    # def excel_file_path(self):
-    #     batch_number = self.batch_number
-    #     script_number = os.getenv('SCRIPT_NUMBER_DECIMAL', 'default_script')
-    #     my_region = os.getenv('MY_REGION')
-    #     return os.path.join(self.out_dir, f"batch{batch_number}_{script_number}_{my_region}_iproperty.xlsx")
-
     @functools.cached_property
     def json_file_path(self):
         return os.path.join(self.out_dir, os.getenv('SCHEMA_DIR'))
-
-    # def remove_existing_csv(self):
-    #     if os.path.exists(self.csv_file):
-    #         os.remove(self.csv_file)
-
-    # def remove_existing_excel(self):
-    #     if os.path.exists(self.excel_file):
-    #         os.remove(self.excel_file)
-
     def load_environment_variables(self):
         dotenv_path = os.path.join(os.getcwd(), '../../.env')
         load_dotenv(dotenv_path)
@@ -101,30 +78,8 @@ class Config:
         scraper = Extraction(self)
         headers = scraper.extractors.keys()
         self.create_empty_csv_file(headers)
-        # self.create_empty_excel_file(headers)
 
     def create_empty_csv_file(self, headers):
         with open(self.csv_file_path, 'w', newline='') as csv_file:
             csv_writer = csv.writer(csv_file)
             csv_writer.writerow(headers)
-
-    # def create_empty_excel_file(self, headers, file_name=None):
-    #     wb = Workbook()
-    #     ws = wb.active
-    #     ws.title = 'iproperty'  # Set the worksheet title
-    #     ws.append(list(headers))  # Add the headers to the first row
-
-    #     if file_name is None:
-    #         excel_file_path = os.path.join(self.out_dir, self.excel_file_path)
-    #     else:
-    #         excel_file_path = os.path.join(self.out_dir, f"{file_name}.xlsx")
-
-    #     wb.save(excel_file_path)
-
-    # def create_excel_files_from_json(self):
-    #     with open(self.json_file_path, 'r') as file:
-    #         data = json.load(file)
-
-    #     for key, script_path in data['Script'].items():
-    #         file_name = os.path.splitext(os.path.basename(script_path))[0]
-    #         self.create_empty_excel_file(self.headers, file_name)
