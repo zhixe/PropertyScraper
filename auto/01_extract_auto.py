@@ -48,8 +48,8 @@ def job():
 
 # Define schedules for the job
 # schedule.every(5).minutes.do(job)  # Every 5 minutes
-schedule.every(60).minutes.do(job)  # Every 60 minutes
-# schedule.every(480).minutes.do(job)  # Every 60 minutes
+# schedule.every(60).minutes.do(job)  # Every 60 minutes
+schedule.every(720).minutes.do(job)  # Every 12 hours
 # schedule.every(8).hours.do(job)  # Every 60 minutes
 # schedule.every(8).hours.at("15:40").do(job)  # Every 12 hours starting at 5 AM
 # schedule.every().day.at("06:00").do(job)  # Every day at 6 AM
