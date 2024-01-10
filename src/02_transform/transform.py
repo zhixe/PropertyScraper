@@ -62,10 +62,8 @@ class DataCleaner:
 
     @staticmethod
     def clean_posted_date(date_str):
-        default_datetime = datetime(1970, 1, 1)
-
         if not isinstance(date_str, str) or not date_str.strip():
-            return default_datetime
+            return None  # return None if date_str is not valid
 
         now = datetime.now()
 
@@ -88,8 +86,9 @@ class DataCleaner:
                 try:
                     return datetime.strptime(date_part, '%d %b %Y')
                 except ValueError:
-                    return default_datetime
-        return default_datetime
+                    return None  # return None if date_str is not valid
+        return None  # return None if date_str is not valid
+
 
 
 
@@ -221,6 +220,7 @@ class DataTransformer:
         df.loc[:, 'Area'] = df['Page_Link'].str.extract(r'/property/([^\/]+)/').astype('str')
         df.loc[:, 'Square_Footage'] = df['Square_Footage'].apply(DataCleaner.clean_square_footage)
         df.loc[:, 'Posted_Date'] = pd.to_datetime(df['Posted_Date'].apply(DataCleaner.clean_posted_date))
+        df.loc[:, 'Posted_Date'] = df.dropna(subset=['Posted_Date'])
 
         # df['House_Price'] = df['House_Price'].str.extract(r'rm (\d+,\d+|\d+)')
         df.loc[:, 'House_Price'] = df['House_Price'].replace(r'rm ', '', regex=True)
