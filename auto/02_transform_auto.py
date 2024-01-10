@@ -42,9 +42,9 @@ def job():
 
 # Define schedules for the job
 # schedule.every(1).minutes.do(job)  # Every 5 minutes
-schedule.every(90).minutes.do(job)  # Every 60 minutes
+# schedule.every(90).minutes.do(job)  # Every 60 minutes
 # schedule.every(510).minutes.do(job)  # Every 60 minutes
-# schedule.every().day.at("06:00").do(job)  # Every day at 6 AM
+schedule.every().day.at("09:50").do(job)  # Every day at 9:50 AM
 
 # Loop to keep the scheduler running
 print("Scheduler is running...")

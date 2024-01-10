@@ -59,7 +59,7 @@ print("Scheduler is running...")
 os.chdir(extract_dir)
 
 logging.info("Web scraping script has been initiated.")
-runpy.run_path(script_file)  # Run the script
+
 while True:
     schedule.run_pending()
     time.sleep(1)
