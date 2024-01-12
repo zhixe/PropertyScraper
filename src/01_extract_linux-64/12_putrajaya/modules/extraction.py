@@ -257,6 +257,6 @@ class Extraction:
         error_message = f"An error occurred: {str(e)}"
         print(error_message)
         timestamp = time.strftime("%Y%m%d-%H%M%S")
-        log_file_name = fr"{self.config.log_dir}\error_log_{timestamp}.log"
+        log_file_name = fr"{self.config.log_dir}/error_log_{timestamp}.log"
         with open(log_file_name, "w") as log_file:
             log_file.write(error_message + "\n")
