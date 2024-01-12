@@ -1,4 +1,4 @@
-import pandas as pd, re, os, glob, functools, json
+import pandas as pd, re, os, glob, functools, json, sys
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -312,3 +312,4 @@ config = Config()
 config.create_folders()
 processor = DataProcessor(config)
 processor.save_transformed_data()
+sys.exit(0)

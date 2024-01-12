@@ -417,4 +417,4 @@ if __name__ == "__main__":
     db = Database()
     executor = MainExecutor(config, db)
     executor.execute()
-
+    sys.exit(0)

@@ -1,4 +1,4 @@
-import json, subprocess, os, re, time, shutil
+import json, subprocess, os, re, time, sys
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -58,3 +58,4 @@ for batch_number, i in enumerate(range(0, len(script_list), batch_size), start=1
     print(f"Script {script_number} executed in {script_execution_time} seconds.")
 total_execution_time += script_execution_time
 print(f"All scripts executed in {total_execution_time} seconds.")
+sys.exit(0)
