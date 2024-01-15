@@ -155,7 +155,7 @@ class RawDataTable:
         try:
             with self.db.connect() as conn:
                 cursor = conn.cursor()
-                cursor.execute(f"DROP TABLE IF EXISTS {self.table_name};")  # Ensure the table is fresh each time
+                # cursor.execute(f"DROP TABLE IF EXISTS {self.table_name};")  # Ensure the table is fresh each time
                 cursor.execute(create_table_query)
             logging.info(f"Table {self.table_name} created successfully.")
         except psycopg2.Error as error:
