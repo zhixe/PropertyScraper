@@ -20,7 +20,7 @@ with open(schemaFile, 'r') as json_file:
 
 # Divide the scripts into batches of 4
 script_list = list(data["Script"].items())
-batch_size = 4 # Max 16, Ideal 4, Best 8
+batch_size = 2 # Max 16, Ideal 4, Best 8
 
 # Initialize a variable to store the total execution time
 total_execution_time = 0
