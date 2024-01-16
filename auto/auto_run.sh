@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
 
-cd /root/projects/PropertyScraper/prj_venv
-source bin/activate
+cd /root/projects/PropertyScraper/prj_venv/bin
+source activate
+
 cd /root/projects/PropertyScraper/src/01_extract_linux-64
 python3 extract.py
 
