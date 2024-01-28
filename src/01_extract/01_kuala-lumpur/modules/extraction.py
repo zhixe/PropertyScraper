@@ -1,6 +1,5 @@
 
-import os, re, time, datetime, pandas as pd, functools
-from dateutil.parser import parse
+import os, time, pandas as pd
 from tqdm import tqdm
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
@@ -97,7 +96,6 @@ class Extraction:
 
     def save_and_clear_data(self):
         output_csv_file = self.initialize_output_csv()
-        # output_excel_file = self.initialize_output_excel()
 
         # Check and fill 'Posted Date' if necessary
         for item in self.data:
@@ -177,9 +175,6 @@ class Extraction:
     def initialize_output_csv(self):
         return self.config.csv_file
 
-    # def initialize_output_excel(self):
-    #     return self.config.excel_file
-
     def process_dataframe(self, df):
         df = df.apply(lambda x: x.strip().lower() if isinstance(x, str) else x)
         df.replace('', 'NULL', inplace=True)
@@ -208,38 +203,9 @@ class Extraction:
         except Exception as e:
             print(f"Error during save: {e}")
 
-    # def save_data_to_excel(self, output_excel_file):
-    #     # Create a DataFrame from self.data
-    #     df_new = pd.DataFrame(self.data)
-    #     # Process the DataFrame (convert dates, calculate averages, etc.)
-    #     df_new = self.process_dataframe(df_new)
-    #     # Drop duplicates based on all columns
-    #     df_new.drop_duplicates(inplace=True)
-
-    #     # Check if the Excel file already exists
-    #     if os.path.exists(output_excel_file):
-    #         # Read the existing Excel file into a DataFrame
-    #         df_existing = pd.read_excel(output_excel_file)
-    #         # Concatenate the old and new data
-    #         df_combined = pd.concat([df_existing.dropna(axis=1, how='all'), df_new.dropna(axis=1, how='all')], ignore_index=True)
-    #         # Explicitly handle all-NA columns
-    #         df_combined = df_combined.dropna(axis=1, how='all')
-    #         # Drop duplicates again after concatenation
-    #         df_combined.drop_duplicates(inplace=True)
-
-    #         # Use xlsxwriter to save the combined DataFrame
-    #         with pd.ExcelWriter(output_excel_file, engine='xlsxwriter') as writer:
-    #             df_combined.to_excel(writer, index=False, sheet_name='iproperty')
-    #     else:
-    #         # If the Excel file doesn't exist, write the new data to it
-    #         with pd.ExcelWriter(output_excel_file, engine='xlsxwriter') as writer:
-    #             df_new.to_excel(writer, index=False, sheet_name='iproperty')
-
     def initialize_and_save_output_files(self):
         output_csv_file = self.initialize_output_csv()
-        # output_excel_file = self.initialize_output_excel()
         self.save_data_to_csv(output_csv_file) # Save to CSV
-        # self.save_data_to_excel(output_excel_file)  # Save to Excel
 
     def scrape_and_save_data(self):
         try:

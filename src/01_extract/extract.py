@@ -1,4 +1,4 @@
-import datetime, json, subprocess, os, re, time
+import datetime, json, subprocess, os, re, time, sys
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -11,17 +11,13 @@ schemaFile = os.path.join(schemaDir, 'script.json')
 venvDir = os.path.join(mainDir, os.getenv("PY_ENV"))
 dataDir = os.path.join(mainDir, 'data')
 
-# Remove data directory
-# if os.path.exists(dataDir):
-#     shutil.rmtree(dataDir)
-
 # Read the JSON file
 with open(schemaFile, 'r') as json_file:
     data = json.load(json_file)
 
 # Divide the scripts into batches of 4
 script_list = list(data["Script"].items())
-batch_size = 8 # Max 16, Ideal 4, Best 8
+batch_size = 2 # Max 16, Min 2, Ideal 4, Best 8
 
 # Initialize a variable to store the total execution time
 total_execution_time = 0

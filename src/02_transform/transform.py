@@ -34,8 +34,6 @@ class Config:
         csv_file_pattern = os.path.join(self.out_dir, '*.csv')
         return glob.glob(csv_file_pattern)
 
-
-
 class DataCleaner:
     @staticmethod
     def clean_square_footage(sq_ft):
@@ -89,9 +87,6 @@ class DataCleaner:
                     return None  # return None if date_str is not valid
         return None  # return None if date_str is not valid
 
-
-
-
     @staticmethod
     def clean_and_capitalize(text):
         if not isinstance(text, str):
@@ -136,7 +131,6 @@ class DataCleaner:
 
         # If all conditions are met, remove three last digits
         return input_str[:-4]
-
 
     @staticmethod
     def is_land_or_bungalow1(row):
@@ -188,8 +182,6 @@ class DataCleaner:
         # If all conditions are met, remove three last digits
         return input_str[:-4]
 
-
-
 class SchemaHandler:
     @staticmethod
     def read_schema(schema_file_path):
@@ -207,8 +199,6 @@ class SchemaHandler:
                     df[adjusted_column] = df[adjusted_column].apply(lambda x: None if pd.isna(x) else x)
         return df
 
-
-
 class DataTransformer:
     def __init__(self, schema):
         self.schema = schema
@@ -221,8 +211,6 @@ class DataTransformer:
         df.loc[:, 'Square_Footage'] = df['Square_Footage'].apply(DataCleaner.clean_square_footage)
         df.loc[:, 'Posted_Date'] = pd.to_datetime(df['Posted_Date'].apply(DataCleaner.clean_posted_date))
         df.loc[:, 'Posted_Date'] = df.dropna(subset=['Posted_Date'])
-
-        # df['House_Price'] = df['House_Price'].str.extract(r'rm (\d+,\d+|\d+)')
         df.loc[:, 'House_Price'] = df['House_Price'].replace(r'rm ', '', regex=True)
         df.loc[:, 'House_Price'] = df['House_Price'].replace(r'from ', '', regex=True)
         df.loc[:, 'House_Price'] = df.apply(DataCleaner.is_land_or_bungalow1, axis=1)
@@ -259,8 +247,6 @@ class DataTransformer:
         state = ' '.join(re.findall(r'batch\d+_\d+_([^_]+)_iproperty_\d+_\d+.csv', file_name)[0].replace('-', ' ').split()).title()
         df.insert(loc=3, column='State', value=state)
         return df
-
-
 
 class DataProcessor:
     def __init__(self, config):
@@ -304,8 +290,6 @@ class DataProcessor:
             data.to_csv(staging_file, index=False)
         else:
             print("No data was processed. Check the input files.")
-
-
 
 # Main
 config = Config()

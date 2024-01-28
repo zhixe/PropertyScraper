@@ -13,8 +13,7 @@ class Config:
     def _get_env_path(self, env_var): # Caching the path retrieval to avoid redundant computations for repeated calls
         return os.path.join(os.getenv("MAIN_DIR"), os.getenv(env_var))
 
-    def load_environment_variables(self): # Load environment variables from a .env file located two directories above the current working directory
-    # Construct a dotenv directory path using a provided environment variable key
+    def load_environment_variables(self): 
         dotenv_path = os.path.join(os.getcwd(), '../../.env')
         load_dotenv(dotenv_path)
 
@@ -56,8 +55,6 @@ class Config:
             ),
             None,
         )
-
-
 
 class Logger:
     def __init__(self, dataset_name, log_dir):
@@ -108,8 +105,6 @@ class Logger:
     def get_logger(self):
         return logging.getLogger()
 
-
-
 class Database:
     def __init__(self): # Initialize database connection parameters from environment variables
         self.pg_host = os.getenv("pgsqlHost")
@@ -128,9 +123,6 @@ class Database:
         )
         conn.set_session(autocommit=True)  # Enable autocommit
         return conn
-
-
-
 
 class RawDataTable:
     def __init__(self, db, schema, table_name, csv_file_path):
@@ -187,11 +179,6 @@ class RawDataTable:
                 # Commit the transaction to save all changes
                 conn.commit()
                 print(f"Data loaded into {self.table_name} successfully from {self.csv_file_path}.")
-
-
-
-
-
 
 class StagingTable:
     def __init__(self, db, schema, table_name, csv_dir):
